@@ -1,28 +1,40 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Kori",
-  description: "A VitePress Site",
+  description: "A Go toolkit for Chi - inspired by Hono, made idiomatic in Go.",
+
+  locales: {
+    root: {
+      label: "English",
+      lang: "en",
+      themeConfig: {
+        nav: [
+          { text: "Home", link: "/" },
+          { text: "Guide", link: "/guide/getting-started" },
+          { text: "API", link: "/api/" },
+        ],
+        sidebar: [],
+      },
+    },
+    ptbr: {
+      label: "Português (Brasil)",
+      lang: "pt-BR",
+      themeConfig: {
+        nav: [
+          { text: "Início", link: "/ptbr/" },
+          { text: "Guia", link: "/ptbr/guide/getting-started" },
+          { text: "API", link: "/ptbr/api/" },
+        ],
+        sidebar: [],
+      },
+    },
+  },
+
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
-    ],
-
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
-
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
-  }
-})
+      { icon: "github", link: "https://github.com/douglasmai4/kori" },
+    ],
+  },
+});
