@@ -33,8 +33,39 @@ export default defineConfig({
   },
 
   themeConfig: {
+    search: {
+      provider: "local",
+      options: {
+        locales: {
+          ptbr: {
+            translations: {
+              button: {
+                buttonText: "Pesquisar",
+                buttonAriaLabel: "Pesquisar",
+              },
+              modal: {
+                displayDetails: "Mostrar lista detalhada",
+                resetButtonTitle: "Redefinir pesquisa",
+                backButtonTitle: "Fechar pesquisa",
+                noResultsText: "Nenhum resultado",
+                footer: {
+                  selectText: "Selecionar",
+                  selectKeyAriaLabel: "Enter",
+                  navigateText: "Navegar",
+                  navigateUpKeyAriaLabel: "Seta para cima",
+                  navigateDownKeyAriaLabel: "Seta para baixo",
+                  closeText: "Fechar",
+                  closeKeyAriaLabel: "Esc",
+                },
+              },
+            },
+          },
+        },
+      },
+    },
     socialLinks: [
       { icon: "github", link: "https://github.com/douglasmai4/kori" },
     ],
   },
+  lastUpdated: true,
 });
