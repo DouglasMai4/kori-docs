@@ -1,25 +1,40 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
-  name: "Kori"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: Kori
+  text: The missing toolkit for Chi
+  tagline: Inspired by Hono. Built for idiomatic Go.
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Get Started
+      link: /guide/getting-started
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: API Reference
+      link: /api/
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
----
+  - icon: 🧩
+    title: Chi Native
+    details: Kori extends Chi instead of replacing it. Keep using net/http, middleware, routers, and everything you already know.
 
+  - icon: ↩️
+    title: Error Return
+    details: Return errors directly from handlers. Kori converts them into consistent HTTP responses automatically.
+
+  - icon: 🔗
+    title: Binding Helpers
+    details: Bind request data from JSON, query strings, path params, headers, forms, and multipart uploads with a single function call.
+
+  - icon: 🦺
+    title: Automatic Validation
+    details: Powered by go-playground/validator. Invalid requests automatically return structured 422 responses.
+
+  - icon: 📖
+    title: OpenAPI Ready
+    details: Generate OpenAPI specifications directly from your routes using the official kori/openapi package.
+
+  - icon: 🔌
+    title: Extensible via Options
+    details: The Option type lets you hook into route registration - used by kori/openapi, route loggers, or your own tooling.
+---
