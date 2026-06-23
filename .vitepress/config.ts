@@ -19,6 +19,7 @@ export default defineConfig({
           { text: "Home", link: "/" },
           { text: "Introduction", link: "/introduction/" },
           { text: "Getting Started", link: "/getting-started/installation" },
+          { text: "Core Concepts", link: "/core-concepts/handlers" },
         ],
         sidebar: [
           {
@@ -51,6 +52,17 @@ export default defineConfig({
               },
             ],
           },
+          {
+            text: "Core Concepts",
+            items: [
+              { text: "Handlers", link: "/core-concepts/handlers" },
+              { text: "Routing", link: "/core-concepts/routing" },
+              { text: "Groups", link: "/core-concepts/groups" },
+              { text: "Middleware", link: "/core-concepts/middleware" },
+              { text: "Options", link: "/core-concepts/options" },
+              { text: "Validation", link: "/core-concepts/validation" },
+            ],
+          },
         ],
       },
     },
@@ -66,6 +78,7 @@ export default defineConfig({
           { text: "Início", link: "/ptbr/" },
           { text: "Introdução", link: "/ptbr/introduction/" },
           { text: "Começando", link: "/ptbr/getting-started/installation" },
+          { text: "Conceitos", link: "/ptbr/core-concepts/handlers" },
         ],
         sidebar: [
           {
@@ -102,6 +115,17 @@ export default defineConfig({
                 text: "Estrutura de Projeto",
                 link: "/ptbr/getting-started/project-structure",
               },
+            ],
+          },
+          {
+            text: "Conceitos Fundamentais",
+            items: [
+              { text: "Handlers", link: "/ptbr/core-concepts/handlers" },
+              { text: "Roteamento", link: "/ptbr/core-concepts/routing" },
+              { text: "Grupos", link: "/ptbr/core-concepts/groups" },
+              { text: "Middleware", link: "/ptbr/core-concepts/middleware" },
+              { text: "Options", link: "/ptbr/core-concepts/options" },
+              { text: "Validação", link: "/ptbr/core-concepts/validation" },
             ],
           },
         ],
