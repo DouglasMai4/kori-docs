@@ -2,6 +2,7 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: "/kori-docs/",
   title: "Kori",
   description: "A Go toolkit for Chi - inspired by Hono, made idiomatic in Go.",
 
