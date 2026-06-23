@@ -5,6 +5,19 @@
  * -------------------------------------------------------------------------- */
 
 /* --------------------------------------------------------------------------
+ * Code Blocks — Light Theme Contrast
+ * -------------------------------------------------------------------------- */
+
+:root {
+    --vp-code-bg: #eef2f7;
+}
+
+.vp-doc div[class*="language-"] {
+    border: 1px solid #d1dae6;
+    border-radius: 8px;
+}
+
+/* --------------------------------------------------------------------------
  * Kori Brand Palette
  * -------------------------------------------------------------------------- */
 
@@ -68,7 +81,8 @@
     --vp-c-divider: #1e293b;
     --vp-c-gutter: #0b1117;
 
-    --vp-code-bg: #0a1016;
+    /* Code block bg — visibly distinct from page bg (#0b1117) */
+    --vp-code-bg: #131f30;
 }
 
 /* --------------------------------------------------------------------------
@@ -172,7 +186,9 @@
 
 .dark .vp-code-block,
 .dark div[class*="language-"] {
-    background-color: #0a1016;
+    background-color: #131f30;
+    border: 1px solid #1e293b;
+    border-radius: 8px;
 }
 
 /* Keywords */
@@ -210,7 +226,7 @@
 /* Shiki token overrides (VitePress default highlighter) */
 .dark .shiki,
 .dark .shiki code {
-    background-color: #0a1016 !important;
+    background-color: #131f30 !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -218,14 +234,13 @@
  * -------------------------------------------------------------------------- */
 
 .dark .VPNav {
-    background-color: rgba(11, 17, 23, 0.85);
+    background-color: rgba(6, 13, 19, 0.92);
     backdrop-filter: blur(12px);
-    border-bottom-color: #1e293b;
 }
 
 .dark .VPSidebar {
-    background-color: #0b1117;
-    border-right-color: #1e293b;
+    background-color: #060d13;
+    border-right: 1px solid #1e293b;
 }
 
 /* Active sidebar item */
