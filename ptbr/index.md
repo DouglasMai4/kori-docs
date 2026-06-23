@@ -8,10 +8,10 @@ hero:
   actions:
     - theme: brand
       text: Começar
-      link: /ptbr/guide/getting-started
+      link: /ptbr/introduction
     - theme: alt
       text: Referência da API
-      link: /ptbr/api/
+      link: /ptbr/core-concepts/handlers
 
 features:
   - icon: 🧩
