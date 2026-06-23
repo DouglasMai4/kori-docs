@@ -10,24 +10,50 @@ export default defineConfig({
       label: "English",
       lang: "en",
       themeConfig: {
+        docFooter: {
+          prev: "Previous page",
+          next: "Next page",
+        },
         nav: [
           { text: "Home", link: "/" },
-          { text: "Guide", link: "/guide/getting-started" },
-          { text: "API", link: "/api/" },
+          { text: "Introduction", link: "/introduction/" },
         ],
-        sidebar: [],
+        sidebar: [
+          {
+            text: "Introduction",
+            items: [
+              { text: "What is Kori?", link: "/introduction/" },
+              { text: "Philosophy", link: "/introduction/philosophy" },
+              { text: "Why Kori?", link: "/introduction/why-kori" },
+              { text: "Comparison", link: "/introduction/comparison" },
+            ],
+          },
+        ],
       },
     },
     ptbr: {
       label: "Português (Brasil)",
       lang: "pt-BR",
       themeConfig: {
+        docFooter: {
+          prev: "Página anterior",
+          next: "Próxima página",
+        },
         nav: [
           { text: "Início", link: "/ptbr/" },
-          { text: "Guia", link: "/ptbr/guide/getting-started" },
-          { text: "API", link: "/ptbr/api/" },
+          { text: "Introdução", link: "/ptbr/introduction/" },
         ],
-        sidebar: [],
+        sidebar: [
+          {
+            text: "Introdução",
+            items: [
+              { text: "O que é o Kori?", link: "/ptbr/introduction/" },
+              { text: "Filosofia", link: "/ptbr/introduction/philosophy" },
+              { text: "Por que o Kori?", link: "/ptbr/introduction/why-kori" },
+              { text: "Comparação", link: "/ptbr/introduction/comparison" },
+            ],
+          },
+        ],
       },
     },
   },
