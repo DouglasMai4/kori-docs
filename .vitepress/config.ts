@@ -17,6 +17,7 @@ export default defineConfig({
         nav: [
           { text: "Home", link: "/" },
           { text: "Introduction", link: "/introduction/" },
+          { text: "Getting Started", link: "/getting-started/installation" },
         ],
         sidebar: [
           {
@@ -26,6 +27,27 @@ export default defineConfig({
               { text: "Philosophy", link: "/introduction/philosophy" },
               { text: "Why Kori?", link: "/introduction/why-kori" },
               { text: "Comparison", link: "/introduction/comparison" },
+            ],
+          },
+          {
+            text: "Getting Started",
+            items: [
+              { text: "Installation", link: "/getting-started/installation" },
+              { text: "Your First API", link: "/getting-started/first-api" },
+              { text: "Routing", link: "/getting-started/routing" },
+              {
+                text: "Error Handling",
+                link: "/getting-started/error-handling",
+              },
+              {
+                text: "Request Binding",
+                link: "/getting-started/request-binding",
+              },
+              { text: "Validation", link: "/getting-started/validation" },
+              {
+                text: "Project Structure",
+                link: "/getting-started/project-structure",
+              },
             ],
           },
         ],
@@ -42,6 +64,7 @@ export default defineConfig({
         nav: [
           { text: "Início", link: "/ptbr/" },
           { text: "Introdução", link: "/ptbr/introduction/" },
+          { text: "Começando", link: "/ptbr/getting-started/installation" },
         ],
         sidebar: [
           {
@@ -51,6 +74,33 @@ export default defineConfig({
               { text: "Filosofia", link: "/ptbr/introduction/philosophy" },
               { text: "Por que o Kori?", link: "/ptbr/introduction/why-kori" },
               { text: "Comparação", link: "/ptbr/introduction/comparison" },
+            ],
+          },
+          {
+            text: "Começando",
+            items: [
+              {
+                text: "Instalação",
+                link: "/ptbr/getting-started/installation",
+              },
+              {
+                text: "Sua Primeira API",
+                link: "/ptbr/getting-started/first-api",
+              },
+              { text: "Roteamento", link: "/ptbr/getting-started/routing" },
+              {
+                text: "Tratamento de Erros",
+                link: "/ptbr/getting-started/error-handling",
+              },
+              {
+                text: "Binding de Requisição",
+                link: "/ptbr/getting-started/request-binding",
+              },
+              { text: "Validação", link: "/ptbr/getting-started/validation" },
+              {
+                text: "Estrutura de Projeto",
+                link: "/ptbr/getting-started/project-structure",
+              },
             ],
           },
         ],
