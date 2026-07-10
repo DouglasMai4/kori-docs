@@ -6,7 +6,7 @@ title: Instalação
 
 ## Requisitos
 
-- Go 1.22 ou superior
+- Go 1.26 ou superior
 - Um router Chi (o Kori constrói sobre ele)
 
 ## Instalar
