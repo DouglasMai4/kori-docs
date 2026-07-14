@@ -86,34 +86,11 @@ func Secure(mw ...kori.Middleware) kori.Option {
 }
 ```
 
-## Integração com OpenAPI
+## Além do núcleo
 
-O pacote oficial `openapi` demonstra todo o poder do sistema de Options. `Spec.Route` retorna uma `kori.Option` que captura o método e o padrão da rota para construir uma especificação OpenAPI 3.1:
+`Option` é a costura por onde o Kori se estende. Qualquer coisa que precise conhecer uma rota no momento do registro pode ser uma option, sem que o núcleo saiba dela.
 
-```go
-doc := openapi.NewSpec(openapi.Config{
-    Title:   "Users API",
-    Version: "1.0.0",
-})
-
-kori.GET(r, "/users", listUsers, doc.Route(openapi.RouteConfig{
-    Summary: "Listar usuários",
-    Params:  &ListUsersParams{},
-    Responses: map[int]any{
-        200: &[]User{},
-    },
-}))
-
-kori.POST(r, "/users", createUser, doc.Route(openapi.RouteConfig{
-    Summary: "Criar usuário",
-    Body:    &CreateUserInput{},
-    Responses: map[int]any{
-        201: &User{},
-    },
-}))
-```
-
-Internamente, `Spec.Route` é implementado assim:
+O módulo [`openapi`](https://github.com/douglasmai4/kori/tree/main/openapi) é construído inteiramente assim. Ele expõe uma option `Route` que captura o método e o padrão de cada rota para construir uma especificação OpenAPI 3.1. Em essência:
 
 ```go
 func (s *Spec) Route(cfg RouteConfig) kori.Option {
@@ -124,31 +101,19 @@ func (s *Spec) Route(cfg RouteConfig) kori.Option {
 }
 ```
 
-`ri.Method` e `ri.Pattern` são os valores totalmente resolvidos que o Kori calculou antes de chamar a option — incluindo o prefixo acumulado do grupo. A spec OpenAPI sempre recebe o caminho completo e correto.
+`ri.Method` e `ri.Pattern` são os valores totalmente resolvidos que o Kori calculou antes de chamar a option — incluindo o prefixo acumulado do grupo — então uma option sempre enxerga o caminho completo e correto.
 
-A spec pode então ser servida em um endpoint dedicado:
+Geração de schemas, extração de parâmetros e requisitos de segurança vivem todos fora do núcleo do Kori, usando nada além da API pública de `Option`. Veja o [módulo `openapi`](https://github.com/douglasmai4/kori/tree/main/openapi) para sua própria API e uso.
 
-```go
-r.Get("/openapi.json", doc.JSONHandler())
-r.Get("/openapi.yaml", doc.YAMLHandler())
-r.Get("/docs", doc.ScalarHandler("/openapi.json"))
-```
+## Options se compõem
 
-Toda essa integração — geração de schemas, extração de parâmetros, requisitos de segurança — é implementada fora do núcleo do Kori, usando apenas a API pública de `Option`.
-
-## Options se compõem com outras options
-
-Múltiplas options em uma única rota são independentes e todas executam:
+Múltiplas options em uma única rota são independentes e todas executam, em ordem:
 
 ```go
 kori.POST(r, "/users", createUser,
     kori.Use(authMiddleware),
-    doc.Route(openapi.RouteConfig{
-        Summary: "Criar usuário",
-        Body:    &CreateUserInput{},
-        Responses: map[int]any{201: &User{}},
-    }),
+    LogRoute(logger),
 )
 ```
 
-`kori.Use` anexa middleware à rota. `doc.Route` registra a rota na spec OpenAPI. Nenhuma das duas options sabe da existência da outra.
+`kori.Use` anexa middleware à rota; `LogRoute` a registra em log. Nenhuma das duas options sabe da existência da outra.

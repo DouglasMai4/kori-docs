@@ -36,6 +36,7 @@ Common tags:
 | `email` | Must be a valid email address |
 | `url` | Must be a valid URL |
 | `uuid4` | Must be a valid UUID v4 |
+| `uuid` | Must be a valid UUID (any version) |
 | `oneof=a b c` | Must be one of the listed values |
 | `len=N` | Must have exactly N characters |
 

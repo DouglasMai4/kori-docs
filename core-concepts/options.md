@@ -86,34 +86,11 @@ func Secure(mw ...kori.Middleware) kori.Option {
 }
 ```
 
-## OpenAPI integration
+## Beyond the core
 
-The official `openapi` package demonstrates the full power of the Option system. `Spec.Route` returns a `kori.Option` that captures the route's method and pattern to build an OpenAPI 3.1 specification:
+`Option` is the seam Kori extends through. Anything that needs to know about a route at registration time can be an option, without the core knowing about it.
 
-```go
-doc := openapi.NewSpec(openapi.Config{
-    Title:   "Users API",
-    Version: "1.0.0",
-})
-
-kori.GET(r, "/users", listUsers, doc.Route(openapi.RouteConfig{
-    Summary: "List users",
-    Params:  &ListUsersParams{},
-    Responses: map[int]any{
-        200: &[]User{},
-    },
-}))
-
-kori.POST(r, "/users", createUser, doc.Route(openapi.RouteConfig{
-    Summary: "Create user",
-    Body:    &CreateUserInput{},
-    Responses: map[int]any{
-        201: &User{},
-    },
-}))
-```
-
-Inside `Spec.Route`, the implementation is:
+The [`openapi`](https://github.com/douglasmai4/kori/tree/main/openapi) module is built entirely this way. It exposes a `Route` option that captures each route's method and pattern to build an OpenAPI 3.1 specification. In essence:
 
 ```go
 func (s *Spec) Route(cfg RouteConfig) kori.Option {
@@ -124,31 +101,19 @@ func (s *Spec) Route(cfg RouteConfig) kori.Option {
 }
 ```
 
-`ri.Method` and `ri.Pattern` are the fully-resolved values Kori computed before calling the option — including the accumulated group prefix. The OpenAPI spec always receives the correct, fully-qualified path.
+`ri.Method` and `ri.Pattern` are the fully-resolved values Kori computed before calling the option — including the accumulated group prefix — so an option always sees the correct, fully-qualified path.
 
-The spec can then be served at a dedicated endpoint:
+Schema generation, parameter extraction, and security requirements all live outside Kori's core, using nothing but the public `Option` API. See the [`openapi` module](https://github.com/douglasmai4/kori/tree/main/openapi) for its own API and usage.
 
-```go
-r.Get("/openapi.json", doc.JSONHandler())
-r.Get("/openapi.yaml", doc.YAMLHandler())
-r.Get("/docs", doc.ScalarHandler("/openapi.json"))
-```
+## Options compose
 
-This entire integration — schema generation, parameter extraction, security requirements — is implemented outside of Kori's core, using only the public `Option` API.
-
-## Options compose with other options
-
-Multiple options on a single route are independent and all execute:
+Multiple options on a single route are independent and all execute, in order:
 
 ```go
 kori.POST(r, "/users", createUser,
     kori.Use(authMiddleware),
-    doc.Route(openapi.RouteConfig{
-        Summary: "Create user",
-        Body:    &CreateUserInput{},
-        Responses: map[int]any{201: &User{}},
-    }),
+    LogRoute(logger),
 )
 ```
 
-`kori.Use` attaches middleware to the route. `doc.Route` registers the route in the OpenAPI spec. Neither option is aware of the other.
+`kori.Use` attaches middleware to the route; `LogRoute` records it. Neither option is aware of the other.

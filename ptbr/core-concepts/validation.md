@@ -30,13 +30,21 @@ Qualquer tag suportada pelo `go-playground/validator` é aceita. Tags comuns:
 | Tag | Significado |
 |---|---|
 | `required` | Campo deve estar presente e não-zero |
+| `omitempty` | Pula a validação se o campo for zero |
 | `min=N` | Comprimento mínimo (string) ou valor mínimo (número) |
 | `max=N` | Comprimento máximo (string) ou valor máximo (número) |
+| `gte=N` | Maior ou igual a N |
+| `lte=N` | Menor ou igual a N |
+| `gt=N` | Maior que N |
+| `lt=N` | Menor que N |
 | `email` | Deve ser um endereço de e-mail válido |
-| `uuid4` | Deve ser um UUID v4 válido |
 | `url` | Deve ser uma URL válida |
+| `uuid4` | Deve ser um UUID v4 válido |
+| `uuid` | Deve ser um UUID válido (qualquer versão) |
 | `oneof=a b c` | Deve ser um dos valores listados |
-| `omitempty` | Pula a validação se o campo for zero |
+| `len=N` | Deve ter exatamente N caracteres |
+
+As tags acima produzem uma `message` legível na resposta de erro. Qualquer outra tag do validator continua funcionando, mas sua `message` cai no erro cru do `go-playground/validator`.
 
 ## Validação automática
 
