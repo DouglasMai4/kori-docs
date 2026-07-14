@@ -95,6 +95,31 @@ kori.NoContent(w)                             // 204
 kori.Redirect(w, r, http.StatusFound, "/new") // redirect
 ```
 
+| Helper                        | Content-Type       | Escreve                                        |
+| ----------------------------- | ------------------ | ---------------------------------------------- |
+| `JSON(w, status, v)`          | `application/json` | `v` codificado como JSON                       |
+| `RawJSON(w, status, data)`    | `application/json` | `data` como está, sem recodificar              |
+| `Text(w, status, s)`          | `text/plain`       | `s` como texto puro                            |
+| `NoContent(w)`                | —                  | `204 No Content`, sem corpo                    |
+| `Redirect(w, r, status, url)` | —                  | Um redirect para `url` com o status informado  |
+
+`RawJSON` escreve bytes que já são JSON válido, evitando uma segunda codificação. Use para payloads em cache ou JSON produzido em outro lugar:
+
+```go
+cached, err := cache.Get(ctx, key) // []byte, já é JSON
+if err != nil {
+    return err
+}
+
+return kori.RawJSON(w, http.StatusOK, cached)
+```
+
+`Redirect` envolve `http.Redirect` e retorna `nil`, então compõe com a assinatura de handler que retorna erro. Informe o status explicitamente — `http.StatusFound` (302), `http.StatusMovedPermanently` (301) ou `http.StatusSeeOther` (303) após um POST bem-sucedido:
+
+```go
+return kori.Redirect(w, r, http.StatusSeeOther, "/posts/"+post.ID)
+```
+
 ## Benefícios
 
 **Fluxo de erros explícito.** Os erros sobem naturalmente. Não há como engolir um erro acidentalmente sem ignorar explicitamente o valor de retorno.

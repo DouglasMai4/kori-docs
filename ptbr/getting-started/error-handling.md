@@ -126,6 +126,21 @@ kori.SetErrorHandler(func(w http.ResponseWriter, r *http.Request, err error) {
 })
 ```
 
+## Envolvendo o handler atual
+
+`kori.GetErrorHandler` retorna o handler em uso no momento. Use-o para adicionar comportamento ao redor do existente — logging, métricas, tracing — em vez de reimplementar o formato da resposta:
+
+```go
+base := kori.GetErrorHandler()
+
+kori.SetErrorHandler(func(w http.ResponseWriter, r *http.Request, err error) {
+    slog.Error("request failed", "err", err, "path", r.URL.Path)
+    base(w, r, err)
+})
+```
+
+Capture `base` antes de chamar `SetErrorHandler`, não dentro do novo handler — caso contrário ele chamaria a si mesmo.
+
 ## Tipo HTTPError
 
 ```go

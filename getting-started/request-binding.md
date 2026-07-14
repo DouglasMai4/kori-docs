@@ -34,6 +34,12 @@ curl -X POST http://localhost:8080/posts \
   -d '{"title":"Hello","body":"World","priority":"high"}'
 ```
 
+The default maximum body size is 4 MB. Larger bodies are rejected with `413 Payload Too Large`. Override it at startup:
+
+```go
+kori.SetMaxBodyBytes(16 << 20) // 16 MB
+```
+
 ## Query parameters
 
 `BindQuery` decodes URL query parameters using `query` struct tags.
