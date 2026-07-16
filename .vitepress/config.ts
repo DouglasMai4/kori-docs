@@ -20,6 +20,7 @@ export default defineConfig({
           { text: "Introduction", link: "/introduction/" },
           { text: "Getting Started", link: "/getting-started/installation" },
           { text: "Core Concepts", link: "/core-concepts/handlers" },
+          { text: "OpenAPI", link: "/openapi/" },
         ],
         sidebar: [
           {
@@ -64,6 +65,15 @@ export default defineConfig({
               { text: "Server-Sent Events", link: "/core-concepts/sse" },
             ],
           },
+          {
+            text: "OpenAPI",
+            items: [
+              { text: "Overview", link: "/openapi/" },
+              { text: "Documenting Routes", link: "/openapi/routes" },
+              { text: "Schema Generation", link: "/openapi/schemas" },
+              { text: "Security", link: "/openapi/security" },
+            ],
+          },
         ],
       },
     },
@@ -80,6 +90,7 @@ export default defineConfig({
           { text: "Introdução", link: "/ptbr/introduction/" },
           { text: "Começando", link: "/ptbr/getting-started/installation" },
           { text: "Conceitos", link: "/ptbr/core-concepts/handlers" },
+          { text: "OpenAPI", link: "/ptbr/openapi/" },
         ],
         sidebar: [
           {
@@ -128,6 +139,15 @@ export default defineConfig({
               { text: "Options", link: "/ptbr/core-concepts/options" },
               { text: "Validação", link: "/ptbr/core-concepts/validation" },
               { text: "Server-Sent Events", link: "/ptbr/core-concepts/sse" },
+            ],
+          },
+          {
+            text: "OpenAPI",
+            items: [
+              { text: "Visão Geral", link: "/ptbr/openapi/" },
+              { text: "Documentando Rotas", link: "/ptbr/openapi/routes" },
+              { text: "Geração de Schemas", link: "/ptbr/openapi/schemas" },
+              { text: "Segurança", link: "/ptbr/openapi/security" },
             ],
           },
         ],
