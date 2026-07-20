@@ -7,6 +7,7 @@ export default defineConfig({
   base,
   title: "Kori",
   description: "A Go toolkit for Chi - inspired by Hono, made idiomatic in Go.",
+  appearance: "force-dark",
   head: [
     ["link", { rel: "icon", type: "image/svg+xml", href: `${base}favicon.svg` }],
   ],

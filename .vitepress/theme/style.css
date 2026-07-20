@@ -1,5 +1,5 @@
 /**
- * Kori Theme
+ * Kori Theme — dark only.
  * Palette derived from the Kori mark: obsidian surfaces cut by an
  * ice-to-indigo gradient (white -> #a7c5ff -> #7b8cff on #0d0d11 / #11151c).
  * -------------------------------------------------------------------------- */
@@ -11,7 +11,7 @@
 :root {
     /* Ink — neutral surfaces, taken directly from the logo background */
     --kori-white: #ffffff;
-    --kori-ink-950: #0d0d11; /* page background (dark) */
+    --kori-ink-950: #0d0d11; /* page background */
     --kori-ink-900: #11151c; /* elevated surface: cards, sidebar, code */
     --kori-ink-800: #181d27; /* borders, dividers */
     --kori-ink-700: #212734; /* hover borders, gutters */
@@ -31,7 +31,7 @@
 }
 
 /* --------------------------------------------------------------------------
- * 2. Semantic Colors — shared by light + dark
+ * 2. Semantic Colors
  * -------------------------------------------------------------------------- */
 
 :root {
@@ -62,31 +62,7 @@
 }
 
 /* --------------------------------------------------------------------------
- * 3. Light Theme — Surfaces & Code
- * -------------------------------------------------------------------------- */
-
-:root {
-    --vp-code-bg: #f3f5fd;
-}
-
-.vp-doc div[class*="language-"] {
-    border: 1px solid #dbe1f7;
-    border-radius: 8px;
-}
-
-.VPFeature {
-    transition:
-        border-color 0.25s ease,
-        transform 0.25s ease;
-}
-
-.VPFeature:hover {
-    border-color: var(--vp-c-brand-1);
-    transform: translateY(-2px);
-}
-
-/* --------------------------------------------------------------------------
- * 4. Dark Theme — Surfaces & Text
+ * 3. Surfaces & Text
  * -------------------------------------------------------------------------- */
 
 .dark {
@@ -106,7 +82,7 @@
 }
 
 /* --------------------------------------------------------------------------
- * 5. Component: Button
+ * 4. Component: Button
  * -------------------------------------------------------------------------- */
 
 :root {
@@ -122,7 +98,7 @@
 }
 
 /* --------------------------------------------------------------------------
- * 6. Component: Home Hero
+ * 5. Component: Home Hero
  * -------------------------------------------------------------------------- */
 
 :root {
@@ -161,7 +137,7 @@
 }
 
 /* --------------------------------------------------------------------------
- * 7. Component: Custom Block (tip / info / warning / danger)
+ * 6. Component: Custom Block (tip / info / warning / danger)
  * -------------------------------------------------------------------------- */
 
 :root {
@@ -181,100 +157,103 @@
 }
 
 /* --------------------------------------------------------------------------
- * 8. Feature Cards — Dark Surface
+ * 7. Feature Cards
  * -------------------------------------------------------------------------- */
 
-.dark .VPFeature {
+.VPFeature {
     background: var(--kori-ink-900);
     border: 1px solid var(--kori-ink-800);
+    transition:
+        border-color 0.25s ease,
+        transform 0.25s ease;
 }
 
-.dark .VPFeature:hover {
+.VPFeature:hover {
     border-color: var(--vp-c-brand-1);
+    transform: translateY(-2px);
 }
 
 /* --------------------------------------------------------------------------
- * 9. Code Blocks — Syntax Highlighting Tokens (Dark)
+ * 8. Code Blocks — Syntax Highlighting Tokens
  * -------------------------------------------------------------------------- */
 
-.dark .vp-code-block,
-.dark div[class*="language-"] {
+.vp-code-block,
+div[class*="language-"] {
     background-color: var(--kori-ink-900);
     border: 1px solid var(--kori-ink-800);
     border-radius: 8px;
 }
 
 /* Keywords */
-.dark .vp-code span.token.keyword,
-.dark .shiki span.keyword,
-.dark [data-highlighted-line] .keyword {
+.vp-code span.token.keyword,
+.shiki span.keyword,
+[data-highlighted-line] .keyword {
     color: var(--kori-300);
 }
 
 /* Strings */
-.dark .vp-code span.token.string,
-.dark .shiki span.string {
+.vp-code span.token.string,
+.shiki span.string {
     color: var(--vp-c-success-3);
 }
 
 /* Functions */
-.dark .vp-code span.token.function,
-.dark .shiki span.function {
+.vp-code span.token.function,
+.shiki span.function {
     color: var(--kori-white);
 }
 
 /* Comments */
-.dark .vp-code span.token.comment,
-.dark .shiki span.comment {
+.vp-code span.token.comment,
+.shiki span.comment {
     color: var(--kori-ink-600);
     font-style: italic;
 }
 
 /* Numbers */
-.dark .vp-code span.token.number,
-.dark .shiki span.number {
+.vp-code span.token.number,
+.shiki span.number {
     color: var(--vp-c-warning-2);
 }
 
 /* Shiki token overrides (VitePress default highlighter) */
-.dark .shiki,
-.dark .shiki code {
+.shiki,
+.shiki code {
     background-color: var(--kori-ink-900) !important;
 }
 
 /* --------------------------------------------------------------------------
- * 10. Navbar & Sidebar — Dark Surface
+ * 9. Navbar & Sidebar — solid panels, no blur
  * -------------------------------------------------------------------------- */
 
- :root {
-     --vp-sidebar-bg-color: var(--kori-ink-950);
- }
-
-.dark .VPNavBar {
-    background-color: rgba(13, 13, 17, 0.92);
-    backdrop-filter: blur(12px);
+:root {
+    --vp-sidebar-bg-color: var(--kori-ink-950);
 }
 
-.dark .VPSidebar {
+.VPNavBar {
     background-color: var(--kori-ink-950);
-    border-right: 1px solid var(--kori-ink-800);
 }
 
 .VPNavBar.has-sidebar .title {
     background-color: var(--kori-ink-950);
 }
 
+.VPSidebar {
+    background-color: var(--kori-ink-950);
+    border-right: 1px solid var(--kori-ink-800);
+}
+
 /* Active sidebar item */
-.dark .VPSidebarItem.is-active > .item .link {
+.VPSidebarItem.is-active > .item .link {
     color: var(--vp-c-brand-1);
 }
 
 /* --------------------------------------------------------------------------
- * 11. Links
+ * 10. Links
  * -------------------------------------------------------------------------- */
 
-.dark a,
-.dark .vp-doc a {
+a,
+.vp-doc a {
     color: var(--vp-c-brand-1);
     text-decoration-color: rgba(123, 140, 255, 0.35);
     transition:
@@ -282,40 +261,40 @@
         text-decoration-color 0.2s;
 }
 
-.dark a:hover,
-.dark .vp-doc a:hover {
+a:hover,
+.vp-doc a:hover {
     color: var(--vp-c-brand-2);
     text-decoration-color: rgba(146, 166, 255, 0.6);
 }
 
 /* --------------------------------------------------------------------------
- * 12. Inline Code
+ * 11. Inline Code
  * -------------------------------------------------------------------------- */
 
-.dark .vp-doc :not(pre) > code {
+.vp-doc :not(pre) > code {
     background-color: var(--vp-c-brand-soft);
     color: var(--kori-300);
     border: 1px solid rgba(123, 140, 255, 0.15);
 }
 
 /* --------------------------------------------------------------------------
- * 13. Scrollbar (Webkit)
+ * 12. Scrollbar (Webkit)
  * -------------------------------------------------------------------------- */
 
-.dark ::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 6px;
     height: 6px;
 }
 
-.dark ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: var(--kori-ink-950);
 }
 
-.dark ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: var(--kori-ink-800);
     border-radius: 3px;
 }
 
-.dark ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background: rgba(123, 140, 255, 0.35);
 }
