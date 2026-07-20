@@ -2,7 +2,10 @@
 layout: home
 
 hero:
-  name: Kori
+  image:
+    light: /kori-logo-light.svg
+    dark: /kori-logo-dark.svg
+    alt: Kori
   text: The missing toolkit for Chi
   tagline: Inspired by Hono. Built for idiomatic Go.
   actions:

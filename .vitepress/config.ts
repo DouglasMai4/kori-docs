@@ -1,10 +1,15 @@
 import { defineConfig } from "vitepress";
 
+const base = "/kori-docs/";
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: "/kori-docs/",
+  base,
   title: "Kori",
   description: "A Go toolkit for Chi - inspired by Hono, made idiomatic in Go.",
+  head: [
+    ["link", { rel: "icon", type: "image/svg+xml", href: `${base}favicon.svg` }],
+  ],
 
   locales: {
     root: {
@@ -156,6 +161,7 @@ export default defineConfig({
   },
 
   themeConfig: {
+    logo: "/favicon.svg",
     search: {
       provider: "local",
       options: {
