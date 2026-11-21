@@ -1,0 +1,18 @@
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/geist-mono';
+
+:root {
+  --kori-primary: #315bff;
+  --kori-crystal: #75b7ff;
+  --kori-ice: #bbd8ff;
+  --kori-deep: #17243b;
+  --kori-snow: #f5f8ff;
+  --kori-mist: #e5ecf7;
+  --kori-steel: #8493ad;
+  --kori-slate: #26364f;
+  --kori-night: #0d1526;
+  --kori-gradient: linear-gradient(120deg, #bbd8ff 0%, #75b7ff 38%, #315bff 100%);
+  --kori-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --kori-font: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+  --kori-mono: 'Geist Mono Variable', ui-monospace, 'SFMono-Regular', monospace;
+}

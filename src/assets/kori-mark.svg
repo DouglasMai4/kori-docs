@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="km-a" x1="10" y1="12" x2="34" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#75B7FF"/><stop offset="1" stop-color="#315BFF"/>
+    </linearGradient>
+    <linearGradient id="km-b" x1="30" y1="4" x2="48" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#BBD8FF"/><stop offset="1" stop-color="#75B7FF"/>
+    </linearGradient>
+    <linearGradient id="km-c" x1="28" y1="36" x2="46" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#75B7FF"/><stop offset="1" stop-color="#315BFF"/>
+    </linearGradient>
+  </defs>
+  <rect x="11" y="16" width="26" height="26" rx="6" transform="rotate(45 24 29)" fill="url(#km-a)"/>
+  <rect x="29" y="7" width="18" height="18" rx="4.5" transform="rotate(45 38 16)" fill="url(#km-b)" opacity=".85"/>
+  <rect x="28" y="33" width="18" height="18" rx="4.5" transform="rotate(45 37 42)" fill="url(#km-c)" opacity=".9"/>
+</svg>
