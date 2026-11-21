@@ -74,7 +74,14 @@ src/
 
 ## Deployment
 
-Pushes to `main` build and deploy to GitHub Pages through `.github/workflows/deploy.yml`. The custom domain is set by `public/CNAME`.
+The site is static and served by Cloudflare Workers (static assets), configured in [`wrangler.jsonc`](wrangler.jsonc). With the repository connected to Workers Builds, every push to `main` runs `bun run build` and `npx wrangler deploy`. The custom domain `kori.douglasmaia.dev.br` is set on the Worker in the Cloudflare dashboard.
+
+To deploy manually:
+
+```sh
+bun run build
+bunx wrangler deploy
+```
 
 ## License
 
