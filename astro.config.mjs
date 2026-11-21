@@ -18,6 +18,7 @@ const koriLight = loadTheme('./src/themes/kori-light.json');
 const group = (label, pt, items) => ({ label, translations: { 'pt-BR': pt }, items });
 
 export default defineConfig({
+  site: 'https://kori.douglasmaia.dev.br',
   integrations: [
     icon({ include: { hugeicons: ['*'] } }),
     starlight({
