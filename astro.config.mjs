@@ -33,6 +33,7 @@ export default defineConfig({
       },
       social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/douglasmai4/kori' }],
       customCss: ['./src/styles/starlight.css'],
+      routeMiddleware: './src/routeData.ts',
       components: {
         SiteTitle: './src/components/SiteTitle.astro',
         SocialIcons: './src/components/SocialIcons.astro',
