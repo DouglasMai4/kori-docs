@@ -1,0 +1,575 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-19T16:00:16+00:00",
+  "title": "Design System: kori",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Kori Primary",
+        "canonical": "#315bff",
+        "tonalRamp": [
+          "oklch(15% 0.037 266)",
+          "oklch(26% 0.087 266)",
+          "oklch(37% 0.148 266)",
+          "oklch(48% 0.208 266)",
+          "oklch(60% 0.219 266)",
+          "oklch(72% 0.153 266)",
+          "oklch(84% 0.087 266)",
+          "oklch(95% 0.037 266)"
+        ]
+      },
+      "primary-on-dark": {
+        "role": "primary",
+        "displayName": "Primary on Dark",
+        "canonical": "#5b8bff",
+        "tonalRamp": [
+          "oklch(15% 0.027 265)",
+          "oklch(26% 0.064 265)",
+          "oklch(37% 0.108 265)",
+          "oklch(48% 0.152 265)",
+          "oklch(60% 0.160 265)",
+          "oklch(72% 0.112 265)",
+          "oklch(84% 0.064 265)",
+          "oklch(95% 0.027 265)"
+        ]
+      },
+      "primary-deep": {
+        "role": "primary",
+        "displayName": "Primary Deep",
+        "canonical": "#1a3299",
+        "tonalRamp": [
+          "oklch(15% 0.025 267)",
+          "oklch(26% 0.060 267)",
+          "oklch(37% 0.101 267)",
+          "oklch(48% 0.143 267)",
+          "oklch(60% 0.150 267)",
+          "oklch(72% 0.105 267)",
+          "oklch(84% 0.060 267)",
+          "oklch(95% 0.025 267)"
+        ]
+      },
+      "crystal": {
+        "role": "secondary",
+        "displayName": "Crystal Blue",
+        "canonical": "#75b7ff",
+        "tonalRamp": [
+          "oklch(15% 0.019 252)",
+          "oklch(26% 0.044 252)",
+          "oklch(37% 0.074 252)",
+          "oklch(48% 0.105 252)",
+          "oklch(60% 0.110 252)",
+          "oklch(72% 0.077 252)",
+          "oklch(84% 0.044 252)",
+          "oklch(95% 0.019 252)"
+        ]
+      },
+      "ice": {
+        "role": "secondary",
+        "displayName": "Ice Blue",
+        "canonical": "#bbd8ff",
+        "tonalRamp": [
+          "oklch(15% 0.009 256)",
+          "oklch(26% 0.022 256)",
+          "oklch(37% 0.038 256)",
+          "oklch(48% 0.053 256)",
+          "oklch(60% 0.056 256)",
+          "oklch(72% 0.039 256)",
+          "oklch(84% 0.022 256)",
+          "oklch(95% 0.009 256)"
+        ]
+      },
+      "accent-low-dark": {
+        "role": "neutral",
+        "displayName": "Accent Wash (Dark)",
+        "canonical": "#142357",
+        "tonalRamp": [
+          "oklch(15% 0.014 268)",
+          "oklch(26% 0.034 268)",
+          "oklch(37% 0.058 268)",
+          "oklch(48% 0.081 268)",
+          "oklch(60% 0.085 268)",
+          "oklch(72% 0.060 268)",
+          "oklch(84% 0.034 268)",
+          "oklch(95% 0.014 268)"
+        ]
+      },
+      "accent-low-light": {
+        "role": "neutral",
+        "displayName": "Accent Wash (Light)",
+        "canonical": "#dfe9ff",
+        "tonalRamp": [
+          "oklch(15% 0.005 266)",
+          "oklch(26% 0.011 266)",
+          "oklch(37% 0.019 266)",
+          "oklch(48% 0.027 266)",
+          "oklch(60% 0.028 266)",
+          "oklch(72% 0.020 266)",
+          "oklch(84% 0.011 266)",
+          "oklch(95% 0.005 266)"
+        ]
+      },
+      "night": {
+        "role": "neutral",
+        "displayName": "Night",
+        "canonical": "#0d1526",
+        "tonalRamp": [
+          "oklch(15% 0.006 264)",
+          "oklch(26% 0.013 264)",
+          "oklch(37% 0.022 264)",
+          "oklch(48% 0.031 264)",
+          "oklch(60% 0.033 264)",
+          "oklch(72% 0.023 264)",
+          "oklch(84% 0.013 264)",
+          "oklch(95% 0.006 264)"
+        ]
+      },
+      "night-raised": {
+        "role": "neutral",
+        "displayName": "Night Raised",
+        "canonical": "#111c30",
+        "tonalRamp": [
+          "oklch(15% 0.006 262)",
+          "oklch(26% 0.015 262)",
+          "oklch(37% 0.025 262)",
+          "oklch(48% 0.035 262)",
+          "oklch(60% 0.037 262)",
+          "oklch(72% 0.026 262)",
+          "oklch(84% 0.015 262)",
+          "oklch(95% 0.006 262)"
+        ]
+      },
+      "code-surface": {
+        "role": "neutral",
+        "displayName": "Code Surface",
+        "canonical": "#0f1a2e",
+        "tonalRamp": [
+          "oklch(15% 0.006 262)",
+          "oklch(26% 0.015 262)",
+          "oklch(37% 0.026 262)",
+          "oklch(48% 0.036 262)",
+          "oklch(60% 0.038 262)",
+          "oklch(72% 0.027 262)",
+          "oklch(84% 0.015 262)",
+          "oklch(95% 0.006 262)"
+        ]
+      },
+      "code-bar": {
+        "role": "neutral",
+        "displayName": "Code Bar",
+        "canonical": "#131f36",
+        "tonalRamp": [
+          "oklch(15% 0.007 262)",
+          "oklch(26% 0.017 262)",
+          "oklch(37% 0.028 262)",
+          "oklch(48% 0.040 262)",
+          "oklch(60% 0.042 262)",
+          "oklch(72% 0.029 262)",
+          "oklch(84% 0.017 262)",
+          "oklch(95% 0.007 262)"
+        ]
+      },
+      "deep-slate": {
+        "role": "neutral",
+        "displayName": "Deep Slate",
+        "canonical": "#17243b",
+        "tonalRamp": [
+          "oklch(15% 0.007 261)",
+          "oklch(26% 0.017 261)",
+          "oklch(37% 0.028 261)",
+          "oklch(48% 0.040 261)",
+          "oklch(60% 0.042 261)",
+          "oklch(72% 0.029 261)",
+          "oklch(84% 0.017 261)",
+          "oklch(95% 0.007 261)"
+        ]
+      },
+      "slate": {
+        "role": "neutral",
+        "displayName": "Slate",
+        "canonical": "#26364f",
+        "tonalRamp": [
+          "oklch(15% 0.007 259)",
+          "oklch(26% 0.017 259)",
+          "oklch(37% 0.029 259)",
+          "oklch(48% 0.041 259)",
+          "oklch(60% 0.044 259)",
+          "oklch(72% 0.030 259)",
+          "oklch(84% 0.017 259)",
+          "oklch(95% 0.007 259)"
+        ]
+      },
+      "line-dark": {
+        "role": "neutral",
+        "displayName": "Line Dark",
+        "canonical": "#22324c",
+        "tonalRamp": [
+          "oklch(15% 0.008 260)",
+          "oklch(26% 0.018 260)",
+          "oklch(37% 0.031 260)",
+          "oklch(48% 0.044 260)",
+          "oklch(60% 0.046 260)",
+          "oklch(72% 0.032 260)",
+          "oklch(84% 0.018 260)",
+          "oklch(95% 0.008 260)"
+        ]
+      },
+      "line-light": {
+        "role": "neutral",
+        "displayName": "Line Light",
+        "canonical": "#dbe3f0",
+        "tonalRamp": [
+          "oklch(15% 0.003 260)",
+          "oklch(26% 0.007 260)",
+          "oklch(37% 0.012 260)",
+          "oklch(48% 0.017 260)",
+          "oklch(60% 0.018 260)",
+          "oklch(72% 0.012 260)",
+          "oklch(84% 0.007 260)",
+          "oklch(95% 0.003 260)"
+        ]
+      },
+      "steel": {
+        "role": "neutral",
+        "displayName": "Steel",
+        "canonical": "#8493ad",
+        "tonalRamp": [
+          "oklch(15% 0.006 261)",
+          "oklch(26% 0.015 261)",
+          "oklch(37% 0.025 261)",
+          "oklch(48% 0.035 261)",
+          "oklch(60% 0.037 261)",
+          "oklch(72% 0.026 261)",
+          "oklch(84% 0.015 261)",
+          "oklch(95% 0.006 261)"
+        ]
+      },
+      "ink-muted-dark": {
+        "role": "neutral",
+        "displayName": "Ink Muted (Dark)",
+        "canonical": "#a9b6cc",
+        "tonalRamp": [
+          "oklch(15% 0.005 261)",
+          "oklch(26% 0.012 261)",
+          "oklch(37% 0.021 261)",
+          "oklch(48% 0.030 261)",
+          "oklch(60% 0.031 261)",
+          "oklch(72% 0.022 261)",
+          "oklch(84% 0.012 261)",
+          "oklch(95% 0.005 261)"
+        ]
+      },
+      "ink-muted-light": {
+        "role": "neutral",
+        "displayName": "Ink Muted (Light)",
+        "canonical": "#3e4d68",
+        "tonalRamp": [
+          "oklch(15% 0.007 262)",
+          "oklch(26% 0.017 262)",
+          "oklch(37% 0.029 262)",
+          "oklch(48% 0.041 262)",
+          "oklch(60% 0.044 262)",
+          "oklch(72% 0.030 262)",
+          "oklch(84% 0.017 262)",
+          "oklch(95% 0.007 262)"
+        ]
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Mist",
+        "canonical": "#e5ecf7",
+        "tonalRamp": [
+          "oklch(15% 0.003 259)",
+          "oklch(26% 0.006 259)",
+          "oklch(37% 0.010 259)",
+          "oklch(48% 0.014 259)",
+          "oklch(60% 0.015 259)",
+          "oklch(72% 0.011 259)",
+          "oklch(84% 0.006 259)",
+          "oklch(95% 0.003 259)"
+        ]
+      },
+      "snow": {
+        "role": "neutral",
+        "displayName": "Snow",
+        "canonical": "#f5f8ff",
+        "tonalRamp": [
+          "oklch(15% 0.002 267)",
+          "oklch(26% 0.004 267)",
+          "oklch(37% 0.006 267)",
+          "oklch(48% 0.008 267)",
+          "oklch(60% 0.009 267)",
+          "oklch(72% 0.006 267)",
+          "oklch(84% 0.004 267)",
+          "oklch(95% 0.002 267)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(15% 0.000 90)",
+          "oklch(26% 0.000 90)",
+          "oklch(37% 0.000 90)",
+          "oklch(48% 0.000 90)",
+          "oklch(60% 0.000 90)",
+          "oklch(72% 0.000 90)",
+          "oklch(84% 0.000 90)",
+          "oklch(95% 0.000 90)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Landing hero headline only; second line in Crystal."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Landing section headlines."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Docs page h1 (Starlight)."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Hero subline."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Landing prose."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Tabs, counters, chips."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "Lowercase kori beside the mark."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Code windows, inline code, API names; mono for code only."
+      }
+    },
+    "shadows": [
+      {
+        "name": "window-lift",
+        "value": "0 30px 60px -30px rgb(13 21 38 / .45)",
+        "purpose": "Under every code window (light theme: 0 30px 60px -32px rgb(23 36 59 / .35))."
+      },
+      {
+        "name": "button-lift",
+        "value": "0 6px 16px -6px rgb(13 21 38 / .55), inset 0 1px 0 rgb(255 255 255 / .25)",
+        "purpose": "Primary button at rest."
+      },
+      {
+        "name": "button-lift-hover",
+        "value": "0 10px 22px -8px rgb(13 21 38 / .6), inset 0 1px 0 rgb(255 255 255 / .25)",
+        "purpose": "Primary button hover."
+      },
+      {
+        "name": "slab-drop",
+        "value": "0 40px 80px -30px rgb(13 21 38 / .9)",
+        "purpose": "Solid gradient hero slab only."
+      },
+      {
+        "name": "nav-glass",
+        "value": "backdrop-filter: saturate(1.4) blur(12px)",
+        "purpose": "Docs header over 86% alpha nav background."
+      }
+    ],
+    "motion": [
+      {
+        "name": "kori-ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All state transitions: button lift, arrow slide, segment change, pane height, theme icon swap."
+      },
+      {
+        "name": "duration-state",
+        "value": "0.2s–0.3s",
+        "purpose": "Hover and color changes."
+      },
+      {
+        "name": "duration-collapse",
+        "value": "0.7s",
+        "purpose": "Diff pane height and line-counter tween (ease-out-quart)."
+      },
+      {
+        "name": "slab-drift",
+        "value": "1.6s kori-ease, staggered .05/.15/.25s",
+        "purpose": "Hero slabs entering from translate(4rem,3rem) rotate(38deg) scale(.94)."
+      },
+      {
+        "name": "pane-in",
+        "value": "0.6s kori-ease from opacity 0, blur(6px), translateY(6px)",
+        "purpose": "Incoming diff pane."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation/transition: none",
+        "purpose": "Honored globally; counter jumps to final value."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "md",
+        "value": "960px"
+      },
+      {
+        "name": "sm",
+        "value": "640px"
+      }
+    ],
+    "gradients": [
+      {
+        "name": "brand",
+        "value": "linear-gradient(120deg, #bbd8ff 0%, #75b7ff 38%, #315bff 100%)",
+        "purpose": "Logo mark and hero slabs only."
+      },
+      {
+        "name": "button",
+        "value": "linear-gradient(120deg, #75b7ff, #4f8cff)",
+        "purpose": "Primary button fill."
+      },
+      {
+        "name": "hero-field",
+        "value": "radial-gradient(60rem 40rem at 85% 55%, rgb(49 91 255 / .28), transparent 60%), linear-gradient(180deg, #0d1526 0%, #111d36 100%)",
+        "purpose": "Night hero background."
+      }
+    ],
+    "assets": [
+      {
+        "name": "kori-mark",
+        "path": "src/assets/kori-mark.svg",
+        "status": "interim",
+        "note": "Interim vector approximating the mock; pending official vectorization."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one luminous action on Night: Get started, Read the docs.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Get started <svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 8h10M9 4l4 4-4 4\"/></svg></a>",
+      "css": ".ds-btn { display:inline-flex; align-items:center; gap:.55rem; padding:.85rem 1.35rem; border-radius:10px; text-decoration:none; font-family:'Geist Variable', ui-sans-serif, system-ui, sans-serif; font-weight:560; color:#0d1526; background:linear-gradient(120deg,#75b7ff,#4f8cff); box-shadow:0 6px 16px -6px rgb(13 21 38 / .55), inset 0 1px 0 rgb(255 255 255 / .25); transition:transform .3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .3s; } .ds-btn svg { transition:transform .3s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn:hover { transform:translateY(-1px); box-shadow:0 10px 22px -8px rgb(13 21 38 / .6), inset 0 1px 0 rgb(255 255 255 / .25); } .ds-btn:hover svg { transform:translateX(3px); } .ds-btn:focus-visible { outline:2px solid #75b7ff; outline-offset:3px; }"
+    },
+    {
+      "name": "Install Pill",
+      "kind": "button",
+      "refersTo": "install-pill",
+      "description": "Copyable go get command beside the primary button.",
+      "html": "<div class=\"ds-install-wrap\"><button class=\"ds-install\" type=\"button\"><code><span class=\"ds-dollar\">$</span> go get github.com/douglasmai4/kori</code><svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"5\" y=\"5\" width=\"8\" height=\"8\" rx=\"1.5\"/><path d=\"M3 10.5V4.5A1.5 1.5 0 0 1 4.5 3h6\"/></svg></button></div>",
+      "css": ".ds-install-wrap { background:#0d1526; padding:1.5rem; } .ds-install { display:inline-flex; align-items:center; gap:.75rem; padding:.78rem .9rem .78rem 1.1rem; border-radius:10px; cursor:pointer; background:rgb(255 255 255 / .04); border:1px solid #2a3b58; color:#d7e0ef; transition:border-color .2s, background .2s; } .ds-install code { font-family:'Geist Mono Variable', ui-monospace, monospace; font-size:.88rem; } .ds-dollar { color:#8493ad; user-select:none; } .ds-install:hover { border-color:#3d5378; background:rgb(255 255 255 / .07); } .ds-install:focus-visible { outline:2px solid #75b7ff; outline-offset:3px; }"
+    },
+    {
+      "name": "Code Window",
+      "kind": "card",
+      "refersTo": "code-window",
+      "description": "The house container for all code; always dark, traffic lights, mono filename.",
+      "html": "<div class=\"ds-window\"><div class=\"ds-bar\"><span class=\"ds-dots\"><i></i><i></i><i></i></span><span class=\"ds-file\">main.go</span></div><pre class=\"ds-code\"><span class=\"ds-k\">func</span> <span class=\"ds-f\">getUser</span>(w http.ResponseWriter, r *http.Request) <span class=\"ds-t\">error</span> {\n  <span class=\"ds-k\">return</span> kori.<span class=\"ds-f\">JSON</span>(w, <span class=\"ds-n\">200</span>, user)\n}</pre></div>",
+      "css": ".ds-window { background:#0f1a2e; border:1px solid #22324c; border-radius:14px; overflow:hidden; box-shadow:0 30px 60px -30px rgb(13 21 38 / .45); color:#e5ecf7; } .ds-bar { display:flex; align-items:center; gap:1rem; padding:.8rem 1rem; border-bottom:1px solid #1d2b44; background:#131f36; } .ds-dots { display:inline-flex; gap:.45rem; } .ds-dots i { width:.7rem; height:.7rem; border-radius:50%; background:#ff5f57; } .ds-dots i:nth-child(2) { background:#febc2e; } .ds-dots i:nth-child(3) { background:#28c840; } .ds-file { font-family:'Geist Mono Variable', ui-monospace, monospace; font-size:.8rem; color:#8493ad; } .ds-code { margin:0; padding:1.25rem 1.4rem; font-family:'Geist Mono Variable', ui-monospace, monospace; font-size:.86rem; line-height:1.7; overflow-x:auto; } .ds-k { color:#75b7ff; } .ds-f { color:#8fb0ff; } .ds-t { color:#9fc6ff; } .ds-n { color:#bbd8ff; }"
+    },
+    {
+      "name": "Segmented Toggle",
+      "kind": "custom",
+      "refersTo": "segmented-tab",
+      "description": "Before/after switch in the diff window bar; selected goes Primary once resolved.",
+      "html": "<div class=\"ds-seg\" role=\"tablist\"><button role=\"tab\" aria-selected=\"false\">Without kori</button><button role=\"tab\" aria-selected=\"true\" class=\"ds-resolved\">With kori</button></div> <span class=\"ds-count\"><b>8</b> lines</span>",
+      "css": ".ds-seg { display:inline-flex; padding:3px; border-radius:9px; background:#0d1526; border:1px solid #22324c; font-family:'Geist Variable', ui-sans-serif, system-ui, sans-serif; } .ds-seg button { font:inherit; font-size:.85rem; border:0; background:none; color:#a9b6cc; padding:.35rem .85rem; border-radius:6px; cursor:pointer; transition:background .3s cubic-bezier(0.16, 1, 0.3, 1), color .2s; } .ds-seg button:hover { color:#fff; } .ds-seg button[aria-selected='true'] { background:#26364f; color:#fff; } .ds-seg button.ds-resolved[aria-selected='true'] { background:#315bff; } .ds-seg button:focus-visible { outline:2px solid #75b7ff; outline-offset:2px; } .ds-count { font-family:'Geist Variable', ui-sans-serif, system-ui, sans-serif; font-size:.85rem; color:#8493ad; font-variant-numeric:tabular-nums; } .ds-count b { color:#fff; font-weight:600; }"
+    },
+    {
+      "name": "Landing Navigation",
+      "kind": "nav",
+      "refersTo": "lang-chip",
+      "description": "Mark plus lowercase wordmark over Night, text links, pill language chip.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\"><svg viewBox=\"0 0 64 64\" width=\"30\" height=\"30\" fill=\"none\" aria-hidden=\"true\"><defs><linearGradient id=\"ds-km-a\" x1=\"10\" y1=\"12\" x2=\"34\" y2=\"50\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0\" stop-color=\"#75B7FF\"/><stop offset=\"1\" stop-color=\"#315BFF\"/></linearGradient><linearGradient id=\"ds-km-b\" x1=\"36\" y1=\"10\" x2=\"54\" y2=\"34\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0\" stop-color=\"#BBD8FF\"/><stop offset=\"1\" stop-color=\"#75B7FF\"/></linearGradient></defs><rect x=\"11\" y=\"16\" width=\"26\" height=\"26\" rx=\"6\" transform=\"rotate(45 24 29)\" fill=\"url(#ds-km-a)\"/><rect x=\"34\" y=\"14\" width=\"18\" height=\"18\" rx=\"4.5\" transform=\"rotate(45 43 23)\" fill=\"url(#ds-km-b)\" opacity=\".85\"/><rect x=\"28\" y=\"33\" width=\"18\" height=\"18\" rx=\"4.5\" transform=\"rotate(45 37 42)\" fill=\"url(#ds-km-a)\" opacity=\".9\"/></svg><span>kori</span></a><nav><a href=\"#\">Docs</a><a href=\"#\">Guides</a><a href=\"#\">Reference</a><a href=\"#\" class=\"ds-lang\">PT</a></nav></header>",
+      "css": ".ds-nav { display:flex; align-items:center; justify-content:space-between; padding:1.4rem 1.5rem; background:#0d1526; color:#f5f8ff; font-family:'Geist Variable', ui-sans-serif, system-ui, sans-serif; } .ds-brand { display:inline-flex; align-items:center; gap:.55rem; text-decoration:none; color:inherit; font-weight:620; font-size:1.45rem; letter-spacing:-0.04em; } .ds-nav nav { display:flex; align-items:center; gap:2rem; font-size:.95rem; } .ds-nav nav a { text-decoration:none; color:#d7e0ef; transition:color .2s; } .ds-nav nav a:hover { color:#fff; } .ds-nav a:focus-visible { outline:2px solid #75b7ff; outline-offset:3px; border-radius:6px; } .ds-lang { padding:.3rem .7rem; border:1px solid #2a3b58; border-radius:999px; font-size:.85rem; }"
+    },
+    {
+      "name": "Definition Rows",
+      "kind": "custom",
+      "description": "Hairline-ruled API index; no cards.",
+      "html": "<dl class=\"ds-rows\"><div class=\"ds-row\"><dt>Binding</dt><dd><code>BindJSON · BindQuery · BindPath</code><span>Decode and validate requests.</span></dd></div><div class=\"ds-row\"><dt>Responses</dt><dd><code>JSON · Text · NoContent</code><span>Write typed responses.</span></dd></div></dl>",
+      "css": ".ds-rows { margin:0; border-top:1px solid #dbe3f0; font-family:'Geist Variable', ui-sans-serif, system-ui, sans-serif; color:#0d1526; background:#f5f8ff; } .ds-row { display:grid; grid-template-columns:12rem minmax(0,1fr); gap:2rem; padding:1.5rem 0; border-bottom:1px solid #dbe3f0; } .ds-row dt { font-weight:600; letter-spacing:-0.01em; } .ds-row dd { margin:0; display:grid; gap:.3rem; } .ds-row code { font-family:'Geist Mono Variable', ui-monospace, monospace; font-size:.92rem; color:#315bff; } .ds-row span { color:#3e4d68; }"
+    },
+    {
+      "name": "Diamond Bullet List",
+      "kind": "custom",
+      "description": "Rounded-diamond bullets in Crystal, echoing the mark.",
+      "html": "<ul class=\"ds-dlist\"><li>Chi stays your router.</li><li>Handlers return error.</li></ul>",
+      "css": ".ds-dlist { list-style:none; padding:0; margin:0; display:grid; gap:.9rem; font-family:'Geist Variable', ui-sans-serif, system-ui, sans-serif; } .ds-dlist li { display:grid; grid-template-columns:1.1rem 1fr; gap:.75rem; } .ds-dlist li::before { content:''; width:.62rem; height:.62rem; margin-top:.52rem; border-radius:3px; transform:rotate(45deg); background:#75b7ff; }"
+    },
+    {
+      "name": "Inline Code",
+      "kind": "chip",
+      "refersTo": "inline-code-light",
+      "description": "Docs inline code on accent wash.",
+      "html": "<p class=\"ds-p\">Call <code class=\"ds-ic\">kori.BindJSON</code> in the handler.</p>",
+      "css": ".ds-p { font-family:'Geist Variable', ui-sans-serif, system-ui, sans-serif; color:#17243b; } .ds-ic { font-family:'Geist Mono Variable', ui-monospace, monospace; background:#dfe9ff; color:#1a3299; border-radius:.35rem; padding:.1em .38em; font-size:.875em; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Ice on Night",
+    "overview": "kori is a cold, clear world: a Night field (deep navy, never black) with translucent rounded-diamond glass slabs carrying the brand gradient, and Snow/Mist reading surfaces where the docs live. The system is a docs product first, so code is the hero material. Code always sits in dark windows with a title bar and traffic lights, in both themes, so the code reads the same wherever it appears.\n\nDensity is calm and lean, matching the library. Sections breathe on a generous vertical rhythm and split into a two-column head (headline left, explanation right) above a single dominant artifact. There are no feature-card grids. Lists are hairline-ruled rows, not boxes. Color is almost entirely the blue family from the binding brand palette. Accents are reserved for action (Primary) and emphasis (Crystal).\n\nThe logo mark at `src/assets/kori-mark.svg` is an **interim vector**: three rotated rounded squares with gradient fills approximating the mock, pending the official vectorization. Treat its geometry as provisional. The binding commitments are the stacked rounded-diamond form and the gradient.",
+    "keyCharacteristics": [
+      "Night hero field with a radial Primary glow and drifting rounded-diamond glass slabs bleeding off the right edge.",
+      "Geist Sans with tight negative tracking on display sizes. Geist Mono is used only for code.",
+      "Code windows are always dark, 14px-rounded, with traffic-light dots and a mono filename.",
+      "Blue-family palette only. The brand gradient appears on the mark and the slabs.",
+      "Hairline borders and tonal steps carry structure. Shadows are soft, sparse, and diffuse."
+    ],
+    "rules": [
+      {
+        "name": "The Gradient Belongs to the Mark Rule",
+        "body": "The brand gradient `linear-gradient(120deg, #bbd8ff 0%, #75b7ff 38%, #315bff 100%)` appears only on the logo mark and the hero slabs that echo it. Do not use it as a section background or a text fill.",
+        "section": "colors"
+      },
+      {
+        "name": "The Night Is Not Black Rule",
+        "body": "The darkest value is Night (`#0d1526`). Dark surfaces step up through Night Raised, Code Surface, and Code Bar. Never use pure `#000`.",
+        "section": "colors"
+      },
+      {
+        "name": "The Blue Family Rule",
+        "body": "Every UI color comes from the blue-navy ramp. The only exceptions are the three macOS traffic-light dots (`#ff5f57`, `#febc2e`, `#28c840`), and they appear only in code-window title bars.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mono Is for Code Rule",
+        "body": "Geist Mono appears only where the content is literally code: code windows, inline code, API names, filenames, and the `go get` command. It never sets headings, labels, or decorative text.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tight Display Rule",
+        "body": "Tracking tightens as size grows: -0.04em at display and wordmark, -0.035em at landing headline, -0.025em in docs headings, and default tracking at body.",
+        "section": "typography"
+      },
+      {
+        "name": "The Ambient Only Rule",
+        "body": "Shadows are large-blur and negatively spread, tinted Night or Deep Slate. Hard or offset shadows are not part of this world.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** put every code sample in a dark code window with traffic lights and a filename, in both themes.",
+      "**Do** keep the hero on Night in both themes, with the Primary radial glow and the rounded-diamond slabs at right.",
+      "**Do** use Crystal for emphasis on dark surfaces and Primary for action and resolved state.",
+      "**Do** use the rounded diamond (45 degree rotation, rounded corners) as the recurring brand shape, including list bullets.",
+      "**Do** structure lists and indexes with 1px hairline rows instead of cards.",
+      "**Do** use `cubic-bezier(0.16, 1, 0.3, 1)` for all state motion and honor `prefers-reduced-motion`.",
+      "**Do** use tabular numerals in tables and counters."
+    ],
+    "donts": [
+      "**Don't** use the brand gradient anywhere except the mark and the slabs that echo it.",
+      "**Don't** set headings, labels, or UI chrome in Geist Mono.",
+      "**Don't** use pure black, or hues outside the blue family (the traffic-light dots are the only exception).",
+      "**Don't** use emoji feature-card grids. Sections show one real artifact, not tiles of claims.",
+      "**Don't** use hard or offset shadows. Elevation is ambient and diffuse."
+    ]
+  }
+}
