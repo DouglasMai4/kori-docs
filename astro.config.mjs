@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
 import fs from 'node:fs';
 import { ExpressiveCodeTheme } from '@astrojs/starlight/expressive-code';
@@ -118,5 +117,4 @@ export default defineConfig({
       ],
     }),
   ],
-  vite: { plugins: [tailwindcss()] },
 });
