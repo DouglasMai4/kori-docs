@@ -1,0 +1,19 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+---
+<StarlightPage
+  frontmatter={{
+    title: 'Page not found',
+    template: 'splash',
+    editUrl: false,
+    pagefind: false,
+    hero: {
+      title: 'Page not found',
+      tagline: 'This page does not exist or was moved. — Esta página não existe ou foi movida.',
+      actions: [
+        { text: 'Go to the docs', link: '/introduction/', icon: 'right-arrow', variant: 'primary' },
+        { text: 'Ir para a documentação', link: '/pt-br/introduction/', variant: 'minimal' },
+      ],
+    },
+  }}
+/>

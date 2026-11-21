@@ -1,0 +1,26 @@
+---
+import { Icon } from 'astro-icon/components';
+const pt = Astro.locals.starlightRoute?.locale === 'pt-br';
+const b = pt ? '/pt-br' : '';
+const path = Astro.url.pathname;
+const links = [
+  { label: 'Docs', href: `${b}/introduction/`, match: ['introduction', 'getting-started', 'core-concepts', 'openapi'] },
+  { label: pt ? 'Guias' : 'Guides', href: `${b}/guides/authentication/`, match: ['guides'] },
+  { label: pt ? 'Referência' : 'Reference', href: `${b}/reference/kori/`, match: ['reference'] },
+];
+const active = (m: string[]) => m.some((s) => path.includes(`/${s}/`));
+---
+<nav class="kori-links" aria-label={pt ? 'Seções' : 'Sections'}>
+  {links.map((l) => <a href={l.href} aria-current={active(l.match) ? 'true' : undefined}>{l.label}</a>)}
+</nav>
+<a class="kori-gh" href="https://github.com/douglasmai4/kori" rel="me" aria-label="GitHub">
+  <Icon name="hugeicons:github" aria-hidden="true" />
+</a>
+<style>
+  .kori-links { display: flex; gap: .25rem; }
+  .kori-links a, .kori-gh { color: var(--sl-color-gray-2); text-decoration: none; font-size: .9rem; font-weight: 500; padding: .4rem .7rem; border-radius: 8px; transition: background .2s, color .2s; }
+  .kori-links a:hover, .kori-gh:hover { color: var(--sl-color-white); background: var(--sl-color-gray-6); }
+  .kori-links a[aria-current] { color: var(--sl-color-accent-high); background: var(--sl-color-accent-low); }
+  .kori-gh { display: grid; place-items: center; padding: .45rem; }
+  .kori-gh :global(svg) { width: 1.15rem; height: 1.15rem; }
+</style>

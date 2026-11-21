@@ -1,0 +1,13 @@
+---
+import Menu from './ui/Menu.astro';
+import { locales, localizedPath } from '../i18n';
+
+const current = Astro.locals.starlightRoute.locale ?? 'root';
+const items = locales.map((l) => ({
+  label: l.label,
+  lang: l.lang,
+  href: localizedPath(Astro.url.pathname, l.prefix),
+  current: l.code === current,
+}));
+---
+<Menu label={Astro.locals.t('languageSelect.accessibleLabel')} icon="hugeicons:translate" items={items} />

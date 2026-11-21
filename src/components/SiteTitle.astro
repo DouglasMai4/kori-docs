@@ -1,0 +1,12 @@
+---
+import mark from '../assets/kori-mark.svg?url';
+const home = Astro.locals.starlightRoute?.locale === 'pt-br' ? '/pt-br/' : '/';
+---
+<a href={home} class="kori-title">
+  <img src={mark} alt="" width="28" height="28" />
+  <span>kori</span>
+</a>
+<style>
+  .kori-title { display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--sl-color-white); font-weight: 600; font-size: 1.3rem; letter-spacing: -0.03em; }
+  img { width: 1.75rem; height: 1.75rem; }
+</style>

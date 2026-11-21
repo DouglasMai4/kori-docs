@@ -1,0 +1,98 @@
+---
+/**
+ * Custom dropdown menu: a button that toggles a list of links.
+ * Keyboard: Enter/Space/ArrowDown open, arrows move, Escape closes.
+ */
+import { Icon } from 'astro-icon/components';
+
+export interface MenuItem { label: string; href: string; current?: boolean; lang?: string }
+interface Props { label: string; icon?: string; items: MenuItem[]; align?: 'start' | 'end' }
+
+const { label, icon, items, align = 'end' } = Astro.props;
+const current = items.find((i) => i.current);
+---
+<kori-menu class="menu" data-align={align}>
+  <button type="button" class="trigger" aria-haspopup="true" aria-expanded="false" aria-label={label}>
+    {icon && <Icon name={icon} class="lead" aria-hidden="true" />}
+    <span>{current?.label ?? label}</span>
+    <Icon name="hugeicons:arrow-down-01" class="caret" aria-hidden="true" />
+  </button>
+  <ul class="list" role="list" hidden>
+    {items.map((item) => (
+      <li>
+        <a href={item.href} hreflang={item.lang} lang={item.lang} aria-current={item.current ? 'true' : undefined}>
+          <span>{item.label}</span>
+          {item.current && <Icon name="hugeicons:tick-02" aria-hidden="true" />}
+        </a>
+      </li>
+    ))}
+  </ul>
+</kori-menu>
+
+<script>
+  class KoriMenu extends HTMLElement {
+    connectedCallback() {
+      const trigger = this.querySelector<HTMLButtonElement>('.trigger')!;
+      const list = this.querySelector<HTMLUListElement>('.list')!;
+      const links = () => [...list.querySelectorAll<HTMLAnchorElement>('a')];
+
+      const set = (open: boolean, focusFirst = false) => {
+        list.hidden = !open;
+        trigger.setAttribute('aria-expanded', String(open));
+        if (open && focusFirst) (links().find((a) => a.ariaCurrent) ?? links()[0])?.focus();
+      };
+
+      trigger.addEventListener('click', () => set(list.hidden, false));
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown') { e.preventDefault(); set(true, true); }
+      });
+      list.addEventListener('keydown', (e) => {
+        const all = links();
+        const i = all.indexOf(document.activeElement as HTMLAnchorElement);
+        if (e.key === 'ArrowDown') { e.preventDefault(); all[(i + 1) % all.length].focus(); }
+        if (e.key === 'ArrowUp') { e.preventDefault(); all[(i - 1 + all.length) % all.length].focus(); }
+        if (e.key === 'Escape') { set(false); trigger.focus(); }
+      });
+      document.addEventListener('click', (e) => { if (!this.contains(e.target as Node)) set(false); });
+      this.addEventListener('focusout', (e) => { if (!this.contains(e.relatedTarget as Node)) set(false); });
+    }
+  }
+  if (!customElements.get('kori-menu')) customElements.define('kori-menu', KoriMenu);
+</script>
+
+<style>
+  .menu { position: relative; display: inline-block; }
+  .trigger {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    height: 2.1rem; padding: 0 0.6rem; border: 0; border-radius: 8px;
+    background: none; color: var(--menu-fg, var(--sl-color-gray-2)); font: inherit; font-size: 0.875rem; font-weight: 500;
+    cursor: pointer; transition: background 0.2s, color 0.2s;
+  }
+  .trigger:hover, .trigger[aria-expanded='true'] { background: var(--menu-hover, var(--sl-color-gray-6)); color: var(--menu-fg-strong, var(--sl-color-white)); }
+  .trigger :global(svg) { width: 1.05rem; height: 1.05rem; }
+  .trigger .caret { width: 0.9rem; height: 0.9rem; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+  .trigger[aria-expanded='true'] .caret { transform: rotate(180deg); }
+
+  .list {
+    position: absolute; top: calc(100% + 0.4rem); z-index: 100;
+    min-width: 11rem; margin: 0; padding: 0.3rem; list-style: none;
+    background: var(--menu-bg, var(--sl-color-bg-nav)); backdrop-filter: blur(14px) saturate(1.4);
+    border: 1px solid var(--menu-line, var(--sl-color-hairline)); border-radius: 12px;
+    box-shadow: 0 16px 36px -16px rgb(0 0 0 / 0.5);
+    transform-origin: top; animation: menu-in 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .menu[data-align='end'] .list { right: 0; }
+  .menu[data-align='start'] .list { left: 0; }
+  .list[hidden] { display: none; }
+  .list li { margin: 0; }
+  .list a {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    padding: 0.5rem 0.65rem; border-radius: 8px; text-decoration: none;
+    color: var(--menu-fg, var(--sl-color-gray-2)); font-size: 0.9rem;
+  }
+  .list a:hover, .list a:focus-visible { background: var(--menu-hover, var(--sl-color-gray-6)); color: var(--menu-fg-strong, var(--sl-color-white)); outline: none; }
+  .list a[aria-current] { color: var(--menu-accent, var(--sl-color-accent-high)); font-weight: 560; }
+  .list a :global(svg) { width: 1rem; height: 1rem; }
+  @keyframes menu-in { from { opacity: 0; transform: translateY(-4px) scale(0.98); } }
+  @media (prefers-reduced-motion: reduce) { .list { animation: none; } }
+</style>
