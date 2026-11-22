@@ -1,19 +1,157 @@
 ---
-import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { Icon } from 'astro-icon/components';
+import '../styles/tokens.css';
+import mark from '../assets/kori-mark.svg?url';
+
+const copy = {
+  en: {
+    title: 'Page not found · kori',
+    h1a: 'This route',
+    h1b: 'isn’t registered.',
+    lede: 'The page you asked for doesn’t exist or was moved. Pick up from one of these instead.',
+    home: 'Back to home',
+    links: [
+      { label: 'Introduction', hint: 'What Kori is and why', href: '/introduction/' },
+      { label: 'Installation', hint: 'go get and a first handler', href: '/getting-started/installation/' },
+      { label: 'API reference', hint: 'Every function and option', href: '/reference/kori/' },
+    ],
+  },
+  pt: {
+    title: 'Página não encontrada · kori',
+    h1a: 'Esta rota',
+    h1b: 'não está registrada.',
+    lede: 'A página que você pediu não existe ou foi movida. Continue por um destes caminhos.',
+    home: 'Voltar ao início',
+    links: [
+      { label: 'Introdução', hint: 'O que é o Kori e por quê', href: '/pt-br/introduction/' },
+      { label: 'Instalação', hint: 'go get e um primeiro handler', href: '/pt-br/getting-started/installation/' },
+      { label: 'Referência da API', hint: 'Todas as funções e opções', href: '/pt-br/reference/kori/' },
+    ],
+  },
+};
 ---
-<StarlightPage
-  frontmatter={{
-    title: 'Page not found',
-    template: 'splash',
-    editUrl: false,
-    pagefind: false,
-    hero: {
-      title: 'Page not found',
-      tagline: 'This page does not exist or was moved. — Esta página não existe ou foi movida.',
-      actions: [
-        { text: 'Go to the docs', link: '/introduction/', icon: 'right-arrow', variant: 'primary' },
-        { text: 'Ir para a documentação', link: '/pt-br/introduction/', variant: 'minimal' },
-      ],
-    },
-  }}
-/>
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>{copy.en.title}</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script is:inline define:vars={{ copy }}>
+    if (location.pathname.startsWith('/pt-br')) {
+      document.documentElement.lang = 'pt-BR';
+      document.documentElement.dataset.lang = 'pt';
+      document.title = copy.pt.title;
+    }
+  </script>
+</head>
+<body>
+  <main class="nf">
+    <header class="nav wrap">
+      <a class="brand" href="/" data-pt-href="/pt-br/" aria-label="kori">
+        <img src={mark} alt="" width="30" height="30" />
+        <span>kori</span>
+      </a>
+    </header>
+
+    <div class="body wrap">
+      <div class="copy">
+        <p class="req" aria-label="HTTP 404">
+          <code><span class="verb">GET</span> <span class="path" id="path">/</span></code>
+          <span class="status">404</span>
+        </p>
+        {(['en', 'pt'] as const).map((l) => (
+          <div class="lang-block" data-l={l}>
+            <h1>{copy[l].h1a}<br /><em>{copy[l].h1b}</em></h1>
+            <p class="lede">{copy[l].lede}</p>
+            <ul class="routes">
+              {copy[l].links.map((x) => (
+                <li>
+                  <a href={x.href}>
+                    <span class="label">{x.label}</span>
+                    <span class="hint">{x.hint}</span>
+                    <Icon name="hugeicons:arrow-right-02" aria-hidden="true" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <a class="home" href={l === 'pt' ? '/pt-br/' : '/'}>
+              <Icon name="hugeicons:arrow-left-02" aria-hidden="true" />{copy[l].home}
+            </a>
+          </div>
+        ))}
+      </div>
+      <div class="slabs" aria-hidden="true">
+        <span class="slab s1"></span>
+        <span class="slab s2"></span>
+        <span class="slab s3"></span>
+      </div>
+    </div>
+  </main>
+
+  <script is:inline>
+    const p = document.getElementById('path');
+    if (p) p.textContent = decodeURI(location.pathname);
+    if (document.documentElement.dataset.lang === 'pt')
+      document.querySelectorAll('[data-pt-href]').forEach((a) => a.setAttribute('href', a.dataset.ptHref));
+  </script>
+</body>
+</html>
+
+<style is:global>
+  * { box-sizing: border-box; }
+  html { color-scheme: dark; }
+  body { margin: 0; min-height: 100svh; font-family: var(--kori-font); font-size: 1.0625rem; line-height: 1.6; -webkit-font-smoothing: antialiased; color: #f5f8ff;
+    background: radial-gradient(60rem 40rem at 85% 60%, rgb(49 91 255 / .26), transparent 60%), linear-gradient(180deg, #0d1526 0%, #111d36 100%); }
+  ::selection { background: color-mix(in oklab, var(--kori-crystal) 45%, transparent); }
+  :focus-visible { outline: 2px solid var(--kori-crystal); outline-offset: 3px; border-radius: 6px; }
+  a { color: inherit; }
+  .wrap { width: min(100% - 3rem, 76rem); margin-inline: auto; }
+
+  .nf { position: relative; min-height: 100svh; overflow: hidden; display: flex; flex-direction: column; }
+  .nav { padding-block: 1.4rem; position: relative; z-index: 2; }
+  .brand { display: inline-flex; align-items: center; gap: .55rem; text-decoration: none; font-weight: 620; font-size: 1.45rem; letter-spacing: -0.04em; }
+
+  .body { position: relative; flex: 1; display: grid; align-items: center; padding-block: 2rem 5rem; }
+  .copy { position: relative; z-index: 2; max-width: 40rem; }
+
+  html:not([data-lang='pt']) .lang-block[data-l='pt'],
+  html[data-lang='pt'] .lang-block[data-l='en'] { display: none; }
+
+  .req { display: inline-flex; align-items: center; gap: .75rem; margin: 0 0 2rem; padding: .45rem .5rem .45rem .9rem; border-radius: 10px;
+    background: rgb(255 255 255 / .04); border: 1px solid #2a3b58; max-width: 100%; }
+  .req code { font-family: var(--kori-mono); font-size: .86rem; color: #d7e0ef; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+  .verb { color: var(--kori-crystal); }
+  .status { font-family: var(--kori-mono); font-size: .8rem; font-weight: 600; padding: .15rem .5rem; border-radius: 6px; background: #26364f; color: #fff; font-variant-numeric: tabular-nums; }
+
+  h1 { margin: 0; font-size: clamp(2.6rem, 6.4vw, 4.75rem); line-height: 1; letter-spacing: -0.04em; font-weight: 660; text-wrap: balance; }
+  h1 em { font-style: normal; color: var(--kori-crystal); }
+  .lede { font-size: clamp(1.05rem, 1.4vw, 1.2rem); color: #b9c5d9; max-width: 32rem; margin: 1.5rem 0 2.5rem; text-wrap: pretty; }
+
+  .routes { list-style: none; margin: 0 0 2rem; padding: 0; border-top: 1px solid #22324c; max-width: 34rem; }
+  .routes a { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: 'label icon' 'hint icon'; align-items: center; column-gap: 1rem;
+    padding: 1rem .25rem; border-bottom: 1px solid #22324c; text-decoration: none; transition: background .3s var(--kori-ease), padding .4s var(--kori-ease); }
+  .routes .label { grid-area: label; font-weight: 600; letter-spacing: -0.01em; }
+  .routes .hint { grid-area: hint; font-size: .92rem; color: #a9b6cc; }
+  .routes svg { grid-area: icon; width: 1.1rem; height: 1.1rem; color: var(--kori-steel); transition: transform .4s var(--kori-ease), color .2s; }
+  .routes a:hover { background: rgb(255 255 255 / .035); padding-inline: .75rem; }
+  .routes a:hover svg { color: var(--kori-crystal); transform: translateX(3px); }
+
+  .home { display: inline-flex; align-items: center; gap: .45rem; color: #d7e0ef; font-size: .95rem; text-decoration: none; }
+  .home svg { width: 1rem; height: 1rem; transition: transform .3s var(--kori-ease); }
+  .home:hover { color: #fff; }
+  .home:hover svg { transform: translateX(-3px); }
+
+  /* Slabs knocked out of formation: the mark, disassembled */
+  .slabs { position: absolute; inset: 0 -10% 0 auto; width: 55%; pointer-events: none; z-index: 1; }
+  .slab { position: absolute; display: block; aspect-ratio: 1; border-radius: 18%; border: 1px solid rgb(187 216 255 / .3); animation: drift 1.6s var(--kori-ease) both; }
+  .s1 { width: 24rem; right: 30%; top: 4%; transform: rotate(31deg); background: linear-gradient(135deg, rgb(117 183 255 / .16), rgb(49 91 255 / .06)); animation-delay: .05s; }
+  .s2 { width: 20rem; right: 2%; top: 38%; transform: rotate(58deg); background: var(--kori-gradient); opacity: .9; box-shadow: 0 40px 80px -30px rgb(13 21 38 / .9); animation-delay: .15s; }
+  .s3 { width: 13rem; right: 38%; top: 66%; transform: rotate(18deg); background: linear-gradient(135deg, rgb(117 183 255 / .5), rgb(49 91 255 / .7)); animation-delay: .25s; }
+  @keyframes drift { from { opacity: 0; translate: 3rem 2rem; } }
+
+  @media (max-width: 960px) { .slabs { width: 100%; inset: auto -35% -15% auto; height: 55%; opacity: .35; } }
+  @media (max-width: 640px) { .body { padding-block: 1rem 3rem; align-items: start; } .slabs { opacity: .22; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
