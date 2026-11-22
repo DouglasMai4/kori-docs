@@ -100,13 +100,13 @@ r.Get("/openapi.yaml", spec.YAMLHandler())
 r.Get("/docs", spec.ScalarHandler("/openapi.json"))
 ```
 
-`ScalarHandler` serve uma página HTML que carrega o [Scalar](https://scalar.com) via jsDelivr apontando para `specURL`.
+`ScalarHandler` serve uma página HTML que carrega o [Scalar](https://scalar.com) via jsDelivr apontando para `specURL`. Usa o tema kori por padrão; `CustomCSS` é aplicado depois do tema.
 
 ### ScalarOptions
 
 ```go
 type ScalarOptions struct {
-    Theme              string // padrão: "default"
+    Theme              string // padrão: "kori"
     DarkMode           bool
     HideModels         bool
     HideDownloadButton bool

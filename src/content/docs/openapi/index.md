@@ -121,7 +121,7 @@ r.Get("/docs", spec.ScalarHandler("/openapi.json", kopenapi.ScalarOptions{
 
 | Option | Effect |
 | --- | --- |
-| `Theme` | Scalar theme name (e.g. `"purple"`, `"default"`) |
+| `Theme` | `"kori"` by default (the kori brand theme, light and dark). Any Scalar theme name (e.g. `"default"`, `"purple"`) opts out |
 | `DarkMode` | Start in dark mode |
 | `HideModels` | Hide the schema models section |
 | `HideDownloadButton` | Hide the spec download button |
